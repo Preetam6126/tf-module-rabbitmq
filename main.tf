@@ -51,6 +51,13 @@ tags = merge(
  
 }
 
+resource "aws_ec2_tag" "name.tag" {
+  
+  key         = "Name"
+  resource_id = aws_spot_instance_request.rabbitmq.spot_instance_id
+  value       = "rabbitmq-${var.env}"
+}
+
 resource "aws_route53_record" "main" {
   zone_id = data.aws_route53_zone.domain.zone_id
   name    = "rabbitmq-${var.env}.${var.dns_domain}"
