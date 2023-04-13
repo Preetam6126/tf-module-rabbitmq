@@ -51,7 +51,7 @@ tags = merge(
  
 }
 
-resource "aws_ec2_tag" "name.tag" {
+resource "aws_ec2_tag" "name-tag" {
   
   key         = "Name"
   resource_id = aws_spot_instance_request.rabbitmq.spot_instance_id
