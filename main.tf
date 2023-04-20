@@ -47,7 +47,7 @@ resource "aws_security_group" "main" {
   }
 tags = merge(
     var.tags,
-    { Name = "docdb-${var.env}" }
+    { Name = "rabbitmq-${var.env}" }
   )
  
 }
